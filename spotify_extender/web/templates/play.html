@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Spotify Guesser{% endblock %}
+{% block content %}
+<header class="mb-auto">
+    <div>
+        <h3 class="float-md-start mb-0">Spotify Guesser</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main class="px-3">
+    <div id="container">
+    </div>
+</main>
+<script type=text/javascript>
+    $(document).ready(function(){
+        $.ajax({
+            type: "GET",
+            url: "/round",
+            success:function(response){
+                $('#container').html(response);
+            }
+        });
+    });
+</script>
+<script type=text/javascript>
+    $(function() {
+      $(document).on('click', 'a#vote_btn', function(event) {
+        var answer = $(event.target).data('id');
+        $.ajax({
+            type: "POST",
+            contentType: 'application/json',
+            url: "/check",
+            data: JSON.stringify(answer),
+            success:function(response){
+                $('#container').html(response);
+            }
+        });
+      });
+    });
+</script>
+<script type=text/javascript>
+    $(function() {
+      $(document).on('click', 'a#next', function(event) {
+        $.ajax({
+            type: "GET",
+            url: "/round",
+            success:function(response){
+                $('#container').html(response);
+            }
+        });
+      });
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+{% endblock %}

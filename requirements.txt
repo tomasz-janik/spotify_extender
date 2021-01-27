@@ -1,0 +1,7 @@
+Werkzeug~=1.0.1
+Flask~=1.1.2
+redis~=3.5.3
+requests~=2.25.1
+injector~=0.18.4
+flask_injector~=0.12.3
+flask_session~=0.3.2

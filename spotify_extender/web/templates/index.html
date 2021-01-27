@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Spotify Guesser{% endblock %}
+{% block content %}
+    <header class="mb-auto">
+        <div>
+            <h3 class="float-md-start mb-0">Spotify Guesser</h3>
+            <nav class="nav nav-masthead justify-content-center float-md-end">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link" href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="px-3">
+        <h1>Spotify Guesser</h1>
+        <p class="lead">Do you know your Spotify preferences as good as you think?</p>
+        <p class="lead">
+            <a href="/login" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Login with Spotify</a>
+        </p>
+    </main>
+{% endblock %}

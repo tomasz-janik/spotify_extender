@@ -1,0 +1,7 @@
+<div class="card-body d-flex flex-column">
+    <h5 class="card-title">{{ card['name'] }}</h5>
+    <p class="card-text mt-auto mb-0 pt-4">Number of followers:<br>
+        <b>{{ card['followers'] }}</b>
+    </p>
+    <a id="vote_btn" class="btn btn-light mt-4" data-id="{{ card.id }}">Vote</a>
+</div>

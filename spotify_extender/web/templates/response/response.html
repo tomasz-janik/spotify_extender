@@ -1,0 +1,9 @@
+<div class="mt-5">
+    {% if response.success %}
+    {% include 'response/response_correct.html' %}
+    {% include 'response/response_statistics.html' %}
+    {% else %}
+    {% include 'response/response_incorrect.html' %}
+    {% include 'response/response_statistics.html' %}
+    {% endif %}
+</div>

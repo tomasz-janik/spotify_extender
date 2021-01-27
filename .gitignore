@@ -127,3 +127,17 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Project custom ignore
+.idea/
+docker.env
+spotify_extender/.mypy_cache/
+spotify_extender/__pycache__/
+spotify_extender/configuration/__pycache__/
+spotify_extender/converters/__pycache__/
+spotify_extender/decorators/__pycache__/
+spotify_extender/enums/__pycache__/
+spotify_extender/mappers/__pycache__/
+spotify_extender/request/__pycache__/
+spotify_extender/services/__pycache__/
+spotify_extender/session/__pycache__/

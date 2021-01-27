@@ -1,0 +1,16 @@
+<h2 class="mb-4">Which {{ top_type }} did you listen to more?</h2>
+<div class="d-flex justify-content-center">
+    {% for card in response %}
+    <div class="float-start card text-white bg-dark"
+         style="width: 16rem; margin-right: 1rem; background-color: #1b1e21!important">
+        <img src="{{ card['image_url'] }}" class="card-img-top border border-dark"
+             alt="{{ card['name'] }}" style="max-height: 16rem; min-height: 16rem;
+             object-fit: contain; border-width: 5px!important">
+        {% if top_type == 'artist' %}
+        {% include 'round/round_artists.html' %}
+        {% else %}
+        {% include 'round/round_tracks.html' %}
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
